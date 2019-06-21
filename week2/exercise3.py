@@ -176,19 +176,13 @@ def loops_5():
     """ 
     columns = 10
     rows = 10
-    to_print = ''
+    outerList = []
     for i in range(0, rows):
-        to_print += '['
+        innerList = []
         for j in range(0, columns):
-            if(j < columns - 1):
-                to_print += "(i" + str(i) + ',j' + str(j) + "),"
-            else:
-                to_print += "(i" + str(i) + ',j' + str(j) + ")"
-        if(i < rows - 1):
-            to_print += '],\n'
-        else:
-            to_print += ']'
-    return to_print
+            innerList.append(('i' + str(i), 'j' + str(j)))
+        outerList.append(innerList)
+    return outerList
     
 
 
