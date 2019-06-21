@@ -7,7 +7,11 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    if (a_number % 2) == 0:
+        the_answer = False
+    else: 
+        the_answer = True
+    return the_answer
 
 
 def fix_it(moves=True, should_move=True):
@@ -25,8 +29,17 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
-
+    if moves == True:
+        if should_move == True:
+            the_answer = "No Problem"
+        elif should_move == False:
+            the_answer = "Duct Tape"
+    else:
+        if should_move == True:
+            the_answer = "WD-40"
+        elif should_move == False:
+            the_answer = "No Problem"
+    return the_answer
 
 def loops_1a():
     """Make 10 stars.
@@ -35,17 +48,23 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    the_answer=[]
+    for i in range(0,10):
+        the_answer.append("*")
+    return the_answer
 
 
-def loops_1c(number_of_items=5, symbol="#"):
+def loops_1c(number_of_items, symbol):
     """Respond to variables.
 
     Using any method, return a list of number_of_items items, each one a
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    the_answer=[]
+    for i in range(0,number_of_items):
+        the_answer.append(symbol)
+    return the_answer
 
 
 def loops_2():
@@ -66,7 +85,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    stars=[]
+    the_answer=[]
+    for i in range(0,10):
+        the_answer.append("*")
+    for i in range(0,10):
+        stars.append(the_answer)
+    return stars
 
 
 def loops_3():
@@ -90,7 +115,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    numbers=[]
+    for i in range(0,10):
+        inner_list = []
+        for j in range(0,10):
+            inner_list.append(str(i))
+        numbers.append(inner_list)
+    return numbers
 
 
 def loops_4():
@@ -110,7 +141,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numbers=[]
+    the_answer=[]
+    for i in range(0,10):
+        numbers.append(str(i))
+    for i in range(0,10):
+        the_answer.append(numbers)
+    return the_answer
 
 
 def loops_5():
@@ -136,8 +173,23 @@ def loops_5():
     or by using format:
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
-    """
-    return None
+    """ 
+    columns = 10
+    rows = 10
+    to_print = ''
+    for i in range(0, rows):
+        to_print += '['
+        for j in range(0, columns):
+            if(j < columns - 1):
+                to_print += "(i" + str(i) + ',j' + str(j) + "),"
+            else:
+                to_print += "(i" + str(i) + ',j' + str(j) + ")"
+        if(i < rows - 1):
+            to_print += '],\n'
+        else:
+            to_print += ']'
+    return to_print
+    
 
 
 def loops_6():
@@ -160,6 +212,12 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
+    numbers=[]
+    numbers_1=[]
+    for i in range(0,10): 
+        for i in range(i): 
+            numbers_1.append(i) 
+        numbers.append(numbers_1)
     return None
 
 
@@ -184,6 +242,15 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+    size = 9
+    m = (2 * size) - 2
+    for i in range(0, size):
+        for j in range(0, m):
+            print(end=" ")
+        m = m - 1 
+        for j in range(0, i + 1):
+            print("*", end=' ')
+        print(" ")
     return None
 
 
