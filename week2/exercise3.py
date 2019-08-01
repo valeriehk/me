@@ -174,15 +174,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """ 
-    columns = 10
-    rows = 10
-    outerList = []
-    for i in range(0, rows):
-        innerList = []
-        for j in range(0, columns):
-            innerList.append(('i' + str(i), 'j' + str(j)))
-        outerList.append(innerList)
-    return outerList
+    numbers=[]
+    for i in range(0,10):
+        inner_list = []
+        for j in range(0,5):
+            inner_list.append("(i" + str(i) + ", j" + str(j) + ")")
+        numbers.append(inner_list)
+    return numbers
     
 
 
@@ -206,13 +204,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    numbers=[]
-    numbers_1=[]
-    for i in range(0,10): 
-        for i in range(i): 
-            numbers_1.append(i) 
-        numbers.append(numbers_1)
-    return None
+    numbers = []
+    n = 10
+    for i in range(0, n):
+        inner_list = []
+        for j in range(0, i + 1):
+            inner_list.append(j)
+        numbers.append(inner_list)
+    return numbers
 
 
 def loops_7():
@@ -237,15 +236,16 @@ def loops_7():
     lots of diagrams!
     """
     size = 9
-    m = (2 * size) - 2
+    pyramid = []
     for i in range(0, size):
+        m = (2 * size) - 2
+        inner_pyramid =[]
         for j in range(0, m):
-            print(end=" ")
+            inner_pyramid.append(pyramid)
         m = m - 1 
         for j in range(0, i + 1):
-            print("*", end=' ')
-        print(" ")
-    return None
+            pyramid.append("*")
+    return pyramid
 
 
 def lp(some_kind_of_list, exercise_name):

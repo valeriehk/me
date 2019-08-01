@@ -5,19 +5,17 @@ Modify each function until the tests pass.
 """
 
 
-def loop_ranger(start, stop=None, step=1):
+def loop_ranger(start, stop, step):
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from JUST using range()
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    i = start
-    while i < stop:
-        yield i
-        i += stop
-    return i
-
+    the_list = []
+    for i in range(start, stop, step):
+        the_list.append(i)
+        return the_list
 
 def lone_ranger(start, stop, step):
     """Duplicate the functionality of range.
